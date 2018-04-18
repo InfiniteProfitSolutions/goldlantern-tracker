@@ -1,0 +1,40 @@
+<!-- GOLD LANTERN TRACKING SCRIPT -->
+<script type="text/javascript">
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    url = url.toLowerCase(); // This is just to avoid case sensitiveness  
+    name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+ty_items = [{'item':'1', amount:17},{'item':'2', amount:27}];
+
+var _gl_amount = 0.01; // put amount of product if this is sale track
+
+item_id = getParameterByName('item');
+for (i=0; i<ty_items.length; i++){
+    if (item_id == ty_items[i].item){
+        _gl_amount = ty_items[i].amount;
+        break;
+    }
+}
+
+var _gl_client = '10'; // don't change
+var _gl_page_type = 'sales_thankyou'; // page type one of (salesletter, optin, optin_thankyou, sales_thankyou, upsell, blog, content, order, landing, checkout)
+var _gl_labels = []; // array of labels  
+var _gl_optin = getParameterByName('cemail'); // put email value if this is optin track 
+var _gl_redirect_url = null; // put url to redirect to after track
+var _gl_dedup_sales = true; // turn on sales deduplication algorithm. Value can be true or false.
+var _gl_sale_code = getParameterByName('cbreceipt'); // this field will be used to distinguish different orders inside of deduplication algorithm
+var _gl_product_code = getParameterByName('item'); // name or code of the product
+(function(){var t=document.createElement('script');t.type='text/javascript';t.async=true;t.src="//ips.ms/gl.js";var s=document.getElementsByTagName('script')[0];s.parentNode.appendChild(t,s);})();   
+</script>
+<noscript><img style="display:none;" src="//ips.ms/record/add?c=10"></noscript>
+<!-- END OF GOLD LANTERN TRACKING SCRIPT --> 
+
+<h1>tralalal</h1>

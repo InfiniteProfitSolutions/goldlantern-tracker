@@ -1,0 +1,15 @@
+{
+    "name": "ips/goldlantern-tracking-core",
+    "description": "Gold Lantern Tracking Core",
+    "type": "project",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Dino Kečo",
+            "email": "dino.keco@gmail.com"
+        }
+    ],
+    "require": {
+       "fluent/logger": "v1.0.0"
+    }
+}
